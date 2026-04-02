@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 18:37:22 by lpatin            #+#    #+#             */
-/*   Updated: 2026/04/01 15:44:41 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/04/02 11:24:37 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class Animal{
 		Animal& operator=(const Animal& other);
 		virtual ~Animal();
 		std::string getType()const;
-		virtual void makeSound() const = 0;
+		virtual void makeSound() const = 0; //Pure virtual
 };

@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 18:37:14 by lpatin            #+#    #+#             */
-/*   Updated: 2026/04/01 15:55:00 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/04/02 13:37:46 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 int main(void) {
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
-	const WrongAnimal* WrongCar = new WrongCat();
+	const WrongAnimal* wrongcat = new WrongCat();
 
 	std::cout << "_______________________________________" << std::endl;
 	std::cout << std::endl;
 
-		std::cout << "Test des sons d'animaux" << std::endl;
+	std::cout << "Test des sons d'animaux" << std::endl;
 	std::cout << std::endl;
 	
 	std::cout << "Son du dog : ";
@@ -33,15 +33,14 @@ int main(void) {
 	std::cout << "Son du cat : ";
 	cat->makeSound();
 	std::cout << "Son du wrong cat : ";
-	WrongCar->makeSound();
+	wrongcat->makeSound();
 	
-
 	std::cout << "_______________________________________" << std::endl;
 	std::cout << std::endl;
 
 	delete dog;
 	delete cat;
-	delete WrongCar;
+	delete wrongcat;
 
 	std::cout << "_______________________________________" << std::endl;
 	std::cout << std::endl;
@@ -63,9 +62,8 @@ int main(void) {
 	std::cout << fifi_copy_ref.getType() << std::endl;
 
 	std::cout << std::endl;
-	std::cout << "Now filling arrays, to check with valgrind if there's any leaks." << std::endl;
+	std::cout << "Now filling arrays, to check with valgrind if there's any leaks, also checking the deep copy thing." << std::endl;
 	std::cout << "_______________________________________" << std::endl;
-
 
 	const Animal	*animal_array[4];
 	
@@ -85,6 +83,6 @@ int main(void) {
 
 	for (int i = 0; i < 4; i++)
 		delete animal_array[i];
-		
+	
 	std::cout << std::endl;
 }
